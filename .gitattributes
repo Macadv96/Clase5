@@ -1,2 +1,137 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+//CLASE PRODUCTO
+public class Producto {
+
+	private String nombre;
+	private Double precio;
+	private Integer idproducto;
+	//crear constructor
+	public Producto(String nombre, Double precio, Integer idproducto) {
+		this.nombre= nombre;
+		this.precio= precio;
+		this.idproducto=idproducto;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+	public Integer getIdproducto() {
+		return idproducto;
+	}
+	public void setIdproducto(Integer idproducto) {
+		this.idproducto = idproducto;
+
+	}
+	public Producto() {
+	}
+}
+
+
+//CLASE ITEM CARRITO
+public class ItemCarrito {
+
+	private String nombreProducto;
+	private int cantidad;
+	
+	public String getNombreProducto() {
+		return nombreProducto;
+	}
+	public void setNombreProducto(String nombreProducto) {
+		this.nombreProducto = nombreProducto;
+	}
+	public int getCantidad() {
+		return cantidad;
+	}
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+	public ItemCarrito(String Nombreproducto, int cantidad) {
+		this.nombreProducto= nombreProducto;
+		this.cantidad=cantidad;
+
+	}
+	public String getNombre() {
+		return nombreProducto;
+	}
+
+}
+
+//CLASE CARRITO
+public class Carrito {
+
+	private String item1;
+	private String item2;
+	private String item3;
+	private Integer nroCarrito;
+	
+	public Carrito(String item1, String item2, String item3, Integer nroCarrito) {
+		this.item1= item1;
+		this.item2= item2;
+		this.item3= item3;
+		this.nroCarrito= nroCarrito;
+	}
+	
+	public String getItem1() {
+		return item1;
+
+	}
+    public void setItem1(String item1) {
+    	this.item1=item1;
+    }
+    public String getItem2() {
+    	return item2;
+    }
+    public void setItem2(String item2) {
+    	this.item2=item2;
+    }
+    public String getItem3() {
+		return item3;
+
+	}
+    public void setItem3(String item3) {
+    	this.item3=item3;
+    }
+    
+    	public Integer getNroCarrito() {
+    	return nroCarrito;
+    }
+    public void setNumeroCarrito(Integer nroCarrito) {
+    	this.nroCarrito=nroCarrito;
+    }
+}
+
+//CLASE MAIN
+public class MainCarrito {
+
+	public static void main(String[] args) {
+		Producto prod1= new Producto("Fideos", 150.00, 12345);
+	    Producto prod2= new Producto("Azucar", 320.00, 234567);
+	    Producto prod3= new Producto("Huevos", 400.00, 345678);
+	    System.out.println("prod1");
+	    System.out.println(prod1.getNombre()+ " " +prod1.getPrecio()+ " " +prod2.getIdproducto());
+	    System.out.println("prod2");
+	    System.out.println(prod2.getNombre()+ " " +prod2.getPrecio()+ " " + prod2.getIdproducto());
+        System.out.println("prod3");
+	    System.out.println(prod3.getNombre()+ " " +prod3.getPrecio()+ " " +prod3.getIdproducto());
+       
+	    
+	    Carrito carritoI= new Carrito("Fideos", "Huevos", "Azucar", 1);
+        Carrito carritoII= new Carrito("Azucar", "Fideos", "Huevos", 3);
+        Carrito carritoIII=new Carrito("Huevos", "Azucar" , "Fideos", 2);
+        System.out.println("carrito N°1");
+        System.out.println(carritoI.getItem1()+ " " +carritoI.getItem2()+ " " +carritoI.getItem3()+ " " +carritoI.getNroCarrito());
+        System.out.println("carrito N°2");
+        System.out.println(carritoII.getItem1()+ " " +carritoII.getItem2()+ " " +carritoII.getItem3()+ " " +carritoII.getNroCarrito());
+        System.out.println("carrito N°3");
+        System.out.println(carritoIII.getItem1()+ " " +carritoIII.getItem2()+ " " +carritoIII.getItem3()+ " "+ carritoIII.getNroCarrito());
+        
+}
+}
